@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odin Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="module"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tic-Tac-Toe</h1>
+    <button class="button instructions">How to Play</button>
+    <p class="scores">
+      <span class="player-x"><span class="name"></span><span class="score">0</span></span> | 
+      <span class="player-o"><span class="name"></span><span class="score">0</span></span>
+    </p>
+    <p>Current player: <span class="current-player"></span></p>
+  </header>
+  <main class="site-main">
+    <div class="turn">
+    </div>
+    <div class="game-board" id="gameBoard">
+      <button class="cell" data-cell="0" aria-label="top left"></button>
+      <button class="cell" data-cell="1" aria-label="top center"></button>
+      <button class="cell" data-cell="2" aria-label="top right"></button>
+      <button class="cell" data-cell="3" aria-label="center left"></button>
+      <button class="cell" data-cell="4" aria-label="center center"></button>
+      <button class="cell" data-cell="5" aria-label="center right"></button>
+      <button class="cell" data-cell="6" aria-label="bottom left"></button>
+      <button class="cell" data-cell="7" aria-label="bottom center"></button>
+      <button class="cell" data-cell="8" aria-label="bottom right"></button>
+    </div>
+  </main>
+  <aside class="modal instructions-modal display-none">
+    <div class="modal-container">
+      <button id="closeModal" class="close-modal">&times;</button>
+      <h2>How To Play</h2>
+      <p>Select a space on the game board to place an X or an O. Three in a line wins!</p>
+    </div>
+  </aside>
+  <aside class="modal new-game-modal">
+    <div class="modal-container">
+      <h2 class="outcome">It's a tie!</h2>
+      <div class="buttons">
+        <button class="button new-game">Play again</button>
+        <button class="button reset">Reset scores</button>
+      </div>
+    </div>
+  </aside>
+  <!-- TODO: let users choose names, colors, possible AI for player O -->
+  <aside class="modal choose-player-modal display-none">
+    <div class="modal-container">
+      <h2>Choose your names and colors!</h2>
+      <p>Leave blank for "X" and "O"</p>
+      <form action="" class="player-names-form">
+        <label for="playerXName">Player X name:</label><input type="text" name="playerXName" id="playerXName"/>
+        <label for="playerXColor">Choose your color:</label><input type="color" name="playerXColor" id="playerXColor" value="#00aaff"/>
+        <label for="playerOBot">Two players?</label><input type="checkbox" />
+        <label for="playerOName">Player O name:</label><input type="text" name="playerOName" id="playerOName"/>
+        <label for="playerOColor">Choose your color:</label><input type="color" name="playerOColor" id="playerOColor" value="#ff00ff"/>
+        <button class="button choose-names-button" id="playerNamesButton"></button>
+      </form>
+    </div>
+  </aside>
+  <div class="svg-symbols display-none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" id="x" class="x" aria-label="X">
+      <g transform="rotate(45)"><rect width="30" height="2" x=-15 y=-1 /><rect width="2" height="30" x=-1 y=-15 /></g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" id="o" class="o" aria-label="O">
+      <path fill-rule="evenodd" d="M0,10.9 a11,11,0,1,1,0.2,0 M0,8.9 a9,9,0,1,1,0.2,0 " />
+    </svg>
+</div>
+</body>
+</html>
